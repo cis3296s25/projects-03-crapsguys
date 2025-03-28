@@ -1,0 +1,41 @@
+import random
+
+def roll_dice():
+    """Simulates rolling two six-sided dice and returns their sum."""
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    return die1 + die2
+
+def play_craps():
+    """Runs a single game of Craps."""
+    print("Welcome to Craps!")
+    input("Press Enter to roll the dice...")
+    
+    point = roll_dice()
+    print(f"You rolled: {point}")
+    
+    # First roll rules
+    if point in [7, 11]:
+        print("Congratulations! You win!")
+        return
+    elif point in [2, 3, 12]:
+        print("Craps! You lose!")
+        return
+    
+    print(f"Your point is now {point}. Keep rolling until you get {point} to win or 7 to lose.")
+    
+    # Continue rolling until point or 7
+    while True:
+        input("Press Enter to roll again...")
+        roll = roll_dice()
+        print(f"You rolled: {roll}")
+        
+        if roll == point:
+            print("You win!")
+            return
+        elif roll == 7:
+            print("You lose! Better luck next time.")
+            return
+
+if __name__ == "__main__":
+    play_craps()
