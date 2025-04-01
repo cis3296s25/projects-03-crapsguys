@@ -1,0 +1,15 @@
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\bin\Debug\net9.0\CrapsGame.exe
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\bin\Debug\net9.0\CrapsGame.deps.json
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\bin\Debug\net9.0\CrapsGame.runtimeconfig.json
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\bin\Debug\net9.0\CrapsGame.dll
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\bin\Debug\net9.0\CrapsGame.pdb
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.AssemblyInfoInputs.cache
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.AssemblyInfo.cs
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.csproj.CoreCompileInputs.cache
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.sourcelink.json
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.dll
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\refint\CrapsGame.dll
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.pdb
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\CrapsGame.genruntimeconfig.cache
+C:\Users\nicho\OneDrive\Desktop\softwaredesign\projects-03-crapsguys\CrapsGame\obj\Debug\net9.0\ref\CrapsGame.dll
