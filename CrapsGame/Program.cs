@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 class CrapsGame
 {
     // Simulates rolling two six-sided dice and returns their sum.
@@ -11,22 +11,27 @@ class CrapsGame
         return die1 + die2;
     }
 
+    // Placeholder function for bet amounts
+    static int BetAmount(int currentBalance) {
+        Console.Write($"How much money would you like to bet?: ");
+        int bet;
+        if (!int.TryParse(Console.ReadLine(), out bet) || bet <=0 || bet > currentBalance) {
+            Console.WriteLine("Invalid bet size. Please enter a valid amount: ");
+            return -1;
+        }
+
+        return bet;
+    }
+
     // Runs a single game of Craps
-    static void PlayCraps(ref int balance)
+    static void PlayCraps(ref int balance, Dictionary<int, double> payouts)
     {
         Console.WriteLine("Welcome to Craps!");
+        Console.WriteLine($"Your current balance is: ${balance}");
 
-        // Ask the player to enter their bet
-        Console.WriteLine($"Your current balance: ${balance}");
-        Console.Write("How much would you like to bet? ");
-        int bet = int.Parse(Console.ReadLine());
-
-        // Check if the bet is valid
-        if (bet <= 0 || bet > balance)
-        {
-            Console.WriteLine("Invalid bet amount. Please enter a valid bet.");
-            return;
-        }
+        // Use placeholder function to retrieve bet amount
+        int bet = BetAmount(balance);
+        if (bet == -1) return; // Exit if invalid bet
 
         // Deduct the bet from the player's balance
         balance -= bet;
@@ -41,13 +46,17 @@ class CrapsGame
         // First roll rules
         if (point == 7 || point == 11)
         {
-            Console.WriteLine("Congratulations! You win!");
-            balance += bet * 2;  // Win double the bet
+            // If you win -> double your earnings (using dictionary; cleaner input and always easily changeable through dict)
+           double multiplier = payouts.ContainsKey(point) ? payouts[point] : 1.0; 
+           int winnings = (int)(bet*multiplier); 
+           Console.WriteLine($"You won! You earned ${winnings}");
+           balance += winnings;
         }
         else if (point == 2 || point == 3 || point == 12)
         {
-            Console.WriteLine("Craps! You lose!");
             // The player loses their bet (already deducted earlier)
+            Console.WriteLine("Craps! You lose!");
+        
         }
         else
         {
@@ -64,14 +73,16 @@ class CrapsGame
 
                 if (roll == point)
                 {
-                    Console.WriteLine("You win!");
-                    balance += bet * 2;  // Win double the bet
+                    double multiplier = payouts.ContainsKey(point) ? payouts[point] : 2.0;
+                    int winnings = (int)(bet * multiplier);
+                    Console.WriteLine($"You won! You earned ${winnings}");
+                    balance += winnings;
                     break;
                 }
                 else if (roll == 7)
                 {
-                    Console.WriteLine("You lose! Better luck next time.");
                     // The player loses their bet (already deducted earlier)
+                    Console.WriteLine("You lose! Better luck next time.");
                     break;
                 }
             }
@@ -82,13 +93,33 @@ class CrapsGame
 
     static void Main(string[] args)
     {
-        int balance = 1000;  // Starting balance
-        bool playing = true;
+        // Direct user to starting amount of $
+        Console.Write("How much money are you depositing?: $");
+        int balance;
+        if(!int.TryParse(Console.ReadLine(), out balance) || balance <= 0 ) {
+            // Invalid amount -> set default amount to $1000
+            Console.WriteLine("Invalid starting amount. Starting by $1000 by default!");
+            balance = 1000; 
+        }
 
+        // Craps payouts by winning number (can be changed) ; 2,3,12 loses by default
+        var payouts = new Dictionary<int, double>
+        {
+            {4, 2.0}, 
+            {5, 1.5},
+            {6, 1.2},
+            {7, 1.0},
+            {8, 1.2},
+            {9, 1.5},
+            {10, 2.0},
+            {11, 1.0},
+        };
+
+        bool playing = true;
         while (playing)
         {
             Console.Clear();  // Clear the screen for the new round
-            PlayCraps(ref balance);
+            PlayCraps(ref balance, payouts); // Play using the new odds
 
             if (balance <= 0)
             {
@@ -96,13 +127,22 @@ class CrapsGame
                 break;
             }
 
-            // Ask if the player wants to keep playing
-            Console.Write("Do you want to play another round? (y/n): ");
-            string choice = Console.ReadLine().ToLower();
-            if (choice != "y")
+            // Ask if the player wants to keep playing -- updated to better handle breaks
+            string choice;
+            while (true) 
             {
-                playing = false;
-                Console.WriteLine("Thanks for playing! Goodbye!");
+                Console.Write("Do you want to play another round? (y/n): "); 
+                choice = Console.ReadLine().ToLower();
+
+                if (choice == "y") {
+                    break; // Continue playing
+                } else if (choice == "n") {
+                    playing = false;
+                    Console.WriteLine("Thanks for playing! Goodbye!");
+                    break;
+                } else {
+                    Console.WriteLine("Invalid input. Please enter 'y' or 'n'.");
+                }
             }
         }
     }
