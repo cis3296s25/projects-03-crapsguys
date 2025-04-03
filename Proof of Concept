@@ -9,14 +9,20 @@ def roll_dice():
 def play_craps():
     """Runs a single game of Craps."""
     print("Welcome to Craps!")
+
+    # Minimum bet for testing
+    bet = int(input("Enter your bet: "))
+
     input("Press Enter to roll the dice...")
+
     
     point = roll_dice()
     print(f"You rolled: {point}")
     
     # First roll rules
     if point in [7, 11]:
-        print("Congratulations! You win!")
+        print("Congratulations! You win!\n")
+        print(f"You won ${bet * 7}")
         return
     elif point in [2, 3, 12]:
         print("Craps! You lose!")
@@ -32,6 +38,7 @@ def play_craps():
         
         if roll == point:
             print("You win!")
+            print(f"You won ${bet * 7}")
             return
         elif roll == 7:
             print("You lose! Better luck next time.")
