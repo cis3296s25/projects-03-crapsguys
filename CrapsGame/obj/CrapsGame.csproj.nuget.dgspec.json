@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/deepak/Desktop/projects-03-crapsguys/CrapsGame/CrapsGame.csproj": {}
+    "C:\\Users\\khosh\\projects-03-crapsguys\\CrapsGame\\CrapsGame.csproj": {}
   },
   "projects": {
-    "/Users/deepak/Desktop/projects-03-crapsguys/CrapsGame/CrapsGame.csproj": {
+    "C:\\Users\\khosh\\projects-03-crapsguys\\CrapsGame\\CrapsGame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/deepak/Desktop/projects-03-crapsguys/CrapsGame/CrapsGame.csproj",
+        "projectUniqueName": "C:\\Users\\khosh\\projects-03-crapsguys\\CrapsGame\\CrapsGame.csproj",
         "projectName": "CrapsGame",
-        "projectPath": "/Users/deepak/Desktop/projects-03-crapsguys/CrapsGame/CrapsGame.csproj",
-        "packagesPath": "/Users/deepak/.nuget/packages/",
-        "outputPath": "/Users/deepak/Desktop/projects-03-crapsguys/CrapsGame/obj/",
+        "projectPath": "C:\\Users\\khosh\\projects-03-crapsguys\\CrapsGame\\CrapsGame.csproj",
+        "packagesPath": "C:\\Users\\khosh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\khosh\\projects-03-crapsguys\\CrapsGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/deepak/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\khosh\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
