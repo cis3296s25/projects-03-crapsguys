@@ -68,7 +68,7 @@ class CrapsGame
            double multiplier = payouts.ContainsKey(point) ? payouts[point] : 1.0; 
            int winnings = (int)(bet*multiplier); 
            Console.WriteLine($"You won! You earned ${winnings}");
-           balance += winnings;
+           balance += winnings + bet;
         }
         else if (point == 2 || point == 3 || point == 12)
         {
@@ -88,7 +88,7 @@ class CrapsGame
 
                 (die1, die2) = RollDice();
                 int roll = die1 + die2;
-                Console.WriteLine($"You rolled: {die1} + {die2} = {point}");
+                Console.WriteLine($"You rolled: {die1} + {die2} = {roll}");
 
                 // Check Hardway Bets
                 for (int i = hardwayBets.Count - 1; i >= 0; i--)
@@ -118,7 +118,7 @@ class CrapsGame
                     double multiplier = payouts.ContainsKey(point) ? payouts[point] : 2.0;
                     int winnings = (int)(bet * multiplier);
                     Console.WriteLine($"You won! You earned ${winnings}");
-                    balance += winnings;
+                    balance += winnings + bet;
                     break;
                 }
                 else if (roll == 7)
